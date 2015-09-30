@@ -14,6 +14,7 @@ This class has methods that can help you do many things, here is a brief summary
 The creds file used in the __main__ is expected to be in the following format:
 
 KeyID   XXXXXXXXXXXXXXXXXXXX
+
 SecretKey       yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
 The class can also get Access Key ID and Secret Key from the environment, if none is provided at the time of instantiation.
