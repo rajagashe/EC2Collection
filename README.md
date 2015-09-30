@@ -63,10 +63,15 @@ areTaggedWith(inslist=None,TagKey='Name') - Takes an instance list and a tag key
 areNotTaggedWith(inslist=None,TagKey='Name') - This is the opposite of the above, 
                 returns a list of instances that are not tagged with a given key.
 
-getInstanceList - Returns a list of instaces based on an attribute value.
+getInstanceList(inslist,instanceattr='instanceid',attrval=None) - Returns a list of instances 
+                based on an attribute value. The first parameter is a list and if its None, the
+                instances in the collection are used, instance attribute, if not provided
+                is assumed to be instance identifier and if attrval is None, the whole 
+                collection is returned.
 
-showSupportedAttribs - Displays the supported attributes for the operations
-                        listed herewith.
+showSupportedAttribs() - Displays the supported attributes for the operations
+                        listed as part of the EC2Collection class. The list
+                        displayed is comma-separated.
 
 showTagValues - Displays the tags on an instance.
 
