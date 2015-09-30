@@ -39,7 +39,7 @@ class EC2Collection:
 		self.supportedattribs = []
 		self.index = -1
 
-	def getListByAttr(self,attrlist,inslist):
+	def __getListByAttr(self,attrlist,inslist):
 		attrlistlen = len(attrlist)
 		lis1 = copy.deepcopy(inslist)
 		attrcount = 0
@@ -90,7 +90,7 @@ class EC2Collection:
 			inslist = self.inslist
 		return [ instance for instance in inslist if list(filter(lambda x: x['Key'] == TagKey, instance['Tags']))]
 
-	def isNotInTagList(self,dictkey,dictlist):
+	def __isNotInTagList(self,dictkey,dictlist):
 		for dic in dictlist:
 			if dic['Key'] == dictkey:
 				return False
@@ -211,6 +211,7 @@ class EC2Collection:
 				print("{0} - {1}".format(ins[attrib],[x for x in ins['Tags'] if x['Key'] == 'Name'][0]['Value']))
 
 if __name__ == "__main__":
+	CREDSFILE = '/Users/rahul/credentials.my'
 	with open(CREDSFILE, encoding='utf-8') as keydata:
 		accninfo = dict([(x.rstrip()).split() for x in keydata])
 	ec2collection = EC2Collection(access_key_id = accninfo['KeyID'],secret_key = accninfo['SecretKey'])
@@ -223,4 +224,4 @@ if __name__ == "__main__":
 	#print("###################################")
 	#print("###!!!Got the Drill down list!!!###")
 	#print("###################################")
-	#print(ec2collection.drillByMultipleParams(['virtualizationtype','hvm','VpcId','vpc-52b1713d','instanceid','i-ef1d1ac5']))
+	#print(ec2collection.drillByMultipleParams(['virtualizationtype','hvm','VpcId','vpc-52b1713d','instanceid','i-xyxyxyxy']))
