@@ -70,7 +70,7 @@ class EC2Collection:
 	def launchedBefore(self,inslist=None,Year=None,Month=None,Day=None):
 		if not inslist:
 			inslist = self.inslist
-		if not Year and Month and Day:
+		if not Year or Month or Day:
 			timenow = datetime.today(tzlocal())
 		else:
 			timenow = datetime.datetime(Year,Month,Day,0,0,0,0,tzlocal())
@@ -79,7 +79,7 @@ class EC2Collection:
 	def launchedAfter(self,inslist=None,Year=None,Month=None,Day=None):
 		if not inslist:
 			inslist = self.inslist
-		if not Year and Month and Day:
+		if not Year or Month or Day:
 			timenow = datetime.today(tzlocal())
 		else:
 			timenow = datetime.datetime(Year,Month,Day,0,0,0,0,tzlocal())
@@ -199,7 +199,9 @@ class EC2Collection:
 
 	def showInstances(self,instanceattr='instanceid',attrval=None):
 		inslist = self.inslist
-		attrib = [key for key in inslist[0] if instanceattr == key.lower()][0]
+		if not self.supportedattribs:
+			self.supportedattribs = [key for key in self.inslist[0] if not isinstance(self.inslist[0][key],list) and not isinstance(self.inslist[0][key],dict) and key != 'LaunchTime']
+		attrib = [key for key in self.supportedattribs if instanceattr == key.lower()][0]
 		if not attrib:
 			print("Sorry, unsupported attribute. Use showSupportedAttribs() to find ou supported attributes.")
 		if not attrval:
