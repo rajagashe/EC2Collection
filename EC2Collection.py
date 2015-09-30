@@ -2,11 +2,10 @@ import sys, os, base64, datetime, hashlib, hmac, requests, copy
 from dateutil.tz import tzlocal
 from boto3.session import Session
 
-"""The E2Collection class should be inherited from an
-AWSResource class, that will have showtags and modtags methods
-that can then be called from the superclass and thus
-tags for specific resource can be obtained.
-All the things that can be done with an instance:
+"""
+The E2Collection class is meant to be used to collect
+and then process this data to gain insights into the
+various aspects of ones usage of cloud resources.
 """
 
 class EC2Collection:
