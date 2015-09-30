@@ -27,32 +27,41 @@ No optimization has been performed on this code yet.
 Methods:
 ========
 
-getListByAttr - returns a subset of a list based on a certain criteria,
-                it further, gets more subsets from the previously obtained
-                subset, so on and so forth, these subset lists generated
-                are basically as many as there would be parameters.
+drillByMultipleParams(attribvallist) - returns an intersection of a list based
+                on a certain criteria, it further gets more subsets from the 
+                previously obtained subset, so on and so forth, these subset 
+                lists generated are basically as many as there would be 
+                parameters.
+                attribvallist - list of supported attributes of this collection
+                such that the list starts with an attribute followed by its value,
+                like so : ['vpcid','vpc-xxxxxx','platform','rhel','virtualizationtype','hvm']
+                This list parameter means that you want to find the list of
+                EC2 instances that are part of vpc-xxxxxx and have platform set to
+                rhel and whose virtualization type is hvm. The list is processed
+                from left to right. Always processes the full list of EC2 instances
+                in the account.
 
-drillByMultipleParams - returns a subset of a list based on a certain criteria,
-                it further, gets more subsets from the previously obtained
-                subset, so on and so forth, these subset lists generated
-                are basically as many as there would be parameters.
+refresh() - Refresh the EC2 instance list. This call is made if you have
+                changed something and want to get an updated list.
 
-refresh - Refresh the EC2 instance list. This call is made if you have
-                changed something.
+launchedBefore(inslist=None,Year=None,Month=None,Day=None) - This is called with a
+                list parameter followed by an integer Year, integer Month and an
+                integer Day. If the Year, Month or Day is None, today() is taken
+                as the day, if inslist is None all the EC2 instances in the collection
+                are processed. This returns a list of instances launched before
+                the given date.
 
-launchedBefore - This is called with date parameters and an instance list, the
-                other parameters are year, month, day, all integer values,
-                this will return the list of instances that were launched
-                before a given date.
+launchedAfter(inslist=None,Year=None,Month=None,Day=None) - This is same as above, 
+                except, it returns a list of instances that were launched after a certain 
+                date.
 
-launchedAfter - This is same as above, except, it returns a list of instances
-                that were launched after a certain date.
+areTaggedWith(inslist=None,TagKey='Name') - Takes an instance list and a tag key and returns 
+                all the instances tagged with that key. Processes all instances in the 
+                collection if list passed is empty, and default key value parameter is
+                'Name'.
 
-areTaggedWith - Takes an instance list and a tag key and returns all the
-                instances tagged with that key.
-
-areNotTaggedWith - This is the opposite of the above, returns a list of
-                        instances that are not tagged with given key.
+areNotTaggedWith(inslist=None,TagKey='Name') - This is the opposite of the above, 
+                returns a list of instances that are not tagged with a given key.
 
 getInstanceList - Returns a list of instaces based on an attribute value.
 
