@@ -1,5 +1,5 @@
 # EC2Collection
-This is a Python class that gathers the Amazon Web Services (AWS) EC2(Elastic Compute Cloud) data from your account for a specific region and provides routines to analyse it.
+This is a Python class that gathers the Amazon Web Services (AWS) EC2(Elastic Compute Cloud) data from your account for a specific region and provides routines to analyse it. This class is iterable.
 
 #Pre-Requisites
 This module expects the following other modules to be present before it can be used:
@@ -22,8 +22,6 @@ The class can also get Access Key ID and Secret Key from the environment, if non
 You are expected to have adequate permissions to perform these operations, at this point I do not have exception handling in place, that will be added later, I wanted to get this out so people can use it.
 
 No optimization has been performed on this code yet.
-
-***This calss is iterable.
 
 Methods:
 ========
