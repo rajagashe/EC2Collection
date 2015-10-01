@@ -4,8 +4,11 @@ from boto3.session import Session
 
 """
 The E2Collection class is meant to be used to collect
-and then process this data to gain insights into the
-various aspects of ones usage of cloud resources.
+and then process this EC2 data to gain insights into the
+various aspects of cloud resources that are EC2 instances.
+This will make no distinction between running and stopped
+instances.
+Author : Rahul Shringarpure
 """
 
 class EC2Collection:
