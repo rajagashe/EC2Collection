@@ -77,6 +77,10 @@ showTagValues(instanceid) - Displays the tags on an instance.
 
 removeTagValue(instanceid,key) - Removes a tag from the instance.
 
-addModifyTagValue - Add or modify a tag value.
+addModifyTagValue(instanceid,key,value) - Add or modify a tag value.
 
-showInstances - Display instances on the basis of a certain attribute value
+showInstances(instanceattr='instanceid',attrval=None) - Display instances on the basis of a certain 
+                attribute value, if no attribute is provided instanceid is assumed and if no attribute
+                value is provided NOne is assumed and the whole collection is displayed with the attribute
+                provided (or instanceid) and the value of the 'Name' Tag, no 'Name' Tag will mean that
+                nothing except the attribute shall be displayed.
