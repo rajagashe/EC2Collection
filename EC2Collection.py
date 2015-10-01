@@ -150,7 +150,7 @@ class EC2Collection:
 		for tags in theone['Tags']:
 			print("{0} - {1}".format(tags['Key'],tags['Value']))
 
-	def removeTagValue(self,session,instanceid,key):
+	def removeTagValue(self,instanceid,key):
 		inslist = self.inslist
 		theone = [instance for instance in inslist if instance['InstanceId'] == instanceid][0]
 		val = [value['Value'] for value in theone['Tags'] if value['Key'] == key][0]
