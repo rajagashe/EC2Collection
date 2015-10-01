@@ -199,8 +199,9 @@ class EC2Collection:
 			return True
 		return False
 
-	def showInstances(self,instanceattr='instanceid',attrval=None):
-		inslist = self.inslist
+	def showInstances(self,inslist=None,instanceattr='instanceid',attrval=None):
+		if not inslist:
+			inslist = self.inslist
 		if not self.supportedattribs:
 			self.supportedattribs = [key for key in self.inslist[0] if not isinstance(self.inslist[0][key],list) and not isinstance(self.inslist[0][key],dict) and key != 'LaunchTime']
 		attrib = [key for key in self.supportedattribs if instanceattr == key.lower()][0]
