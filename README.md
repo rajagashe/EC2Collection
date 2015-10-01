@@ -73,9 +73,9 @@ showSupportedAttribs() - Displays the supported attributes for the operations
                         listed as part of the EC2Collection class. The list
                         displayed is comma-separated.
 
-showTagValues - Displays the tags on an instance.
+showTagValues(instanceid) - Displays the tags on an instance.
 
-removeTagValue - Removes a tag from the instance.
+removeTagValue(instanceid,key) - Removes a tag from the instance.
 
 addModifyTagValue - Add or modify a tag value.
 
