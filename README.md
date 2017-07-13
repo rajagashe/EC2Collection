@@ -42,7 +42,7 @@ __Log URI__ : This is the location where EMR will store the logs, this is useful
 ## After the stack is created
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
-![]
+![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ClusterDetails.png?raw=true)
 
 Click on the security group and add your custom IP address for SSH into the inbound list of allowed IP addresses and ports, for details have a look at [this](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html).
 
