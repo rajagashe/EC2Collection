@@ -77,4 +77,4 @@ All you have to do is open your favourite browser and enter the following in it 
 
 This should display a page similar to this,
 
-![]()
+![](https://github.com/OmarKhayyam/EC2Collection/blob/master/Zeppelin-First-Screen.png?raw=true)
