@@ -18,6 +18,10 @@ With a name of your choice in the region of your choice. Note, this will decide 
 ## Prepare the scripts for use later
 Change the following files to use the name of your new bucket instead of the string __myBucket__.
 
+`bootstrap_EMRCluster.sh` - Replace __myBucket__ with the name of the bucket you just created above.
+
+`rateMovies` - Replace __myBucket__ with the name of the bucket you just created above. If you are going to modify the `personalRatings.txt` file by hand, you don't need to do modify this file.
+
 ## Getting the Data
 We will be using the [Movielens 100K dataset](https://grouplens.org/datasets/movielens/100k/) for this exercise. Download it, unzip the bundle, and upload all the files to the bucket you just created above.
 ## Run the Cloudformation template
