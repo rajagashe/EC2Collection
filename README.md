@@ -69,3 +69,12 @@ for example, note that all DNS names and key names are fictitious.
 
 #### Windows Users
 To set up an SSH tunnel from your Windows laptop/machine to the Master node in the EMR cluster, [follow these instructions](http://realprogrammers.com/how_to/set_up_an_ssh_tunnel_with_putty.html).
+
+### Accessing the Zeppelin Notebook
+All you have to do is open your favourite browser and enter the following in it and hit <ENTER>,
+
+`http://localhost:8890`
+
+This should display a page similar to this,
+
+![]()
