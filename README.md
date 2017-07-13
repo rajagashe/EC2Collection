@@ -40,4 +40,4 @@ __Log URI__ : This is the location where EMR will store the logs, this is useful
 ## After the stack is created
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
-[![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ClusterDetails.png?raw=true)]
+![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ClusterDetails.png?raw=true)
