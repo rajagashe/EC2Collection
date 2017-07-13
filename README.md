@@ -38,6 +38,6 @@ __Subnet Id__ : This is the id of the subnet where you will launch the EMR clust
 __Log URI__ : This is the location where EMR will store the logs, this is useful later for debugging issues you may face.
 
 ## After the stack is created
-We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group.
+We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
-
+[![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ClusterDetails.png?raw=true)]
