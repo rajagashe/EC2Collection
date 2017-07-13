@@ -27,7 +27,7 @@ Change the following files to use the name of your new bucket instead of the str
 ## Getting the Data
 We will be using the [Movielens 100K dataset](https://grouplens.org/datasets/movielens/100k/) for this exercise. Download it, unzip the bundle, and upload all the files to the bucket you just created above.
 
-## Uploading the Data
+## Uploading the files
 We should now upload all of the files we discussed so far, including the Movielens dataset to the newly created S3 bucket. You can either use the CLI to upload your files, like so,
 
 `aws s3 cp sourceFile s3://myBucket`
@@ -37,6 +37,18 @@ To use the CLI to upload the files, we will need to ensure that we have our CLI 
 __OR__, 
 
 We could use the AWS Management Console to upload all the files to our bucket, refer to this documentation for [guidance on using the AWS Management Console to upload your files](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/upload-objects.html).
+
+### At this point, the following files should be in the newly created S3 bucket,
+
+*_bootstrap_EMRCluster.sh_
+
+*_bootstrap_zeppelin.sh_
+
+*_personalRatings.txt_
+
+*_All the files from the Movielens Dataset._
+
+
 
 ## Run the Cloudformation template
 Now, open the Cloudformation console in the AWS Management Console, and create the stack, the template will ask for some parameters, make sure you already have them, they are,
