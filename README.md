@@ -43,16 +43,29 @@ __Log URI__ : This is the location where EMR will store the logs, this is useful
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
 ![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ClusterDetails.png?raw=true)
+
 Click on the security group and add your custom IP address for SSH into the inbound list of allowed IP addresses and ports, for details have a look at [this](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html).
 
 ### Setting the Apache Zeppelin interpreter
+Issue the following command from your laptop/machine, note that the key path and name are fictitious and should be replaced with your own key path and name, this is the key pair we generated when we created the EC2 key pair (see above). Also, the EC2 fully qualified name for the master node is also fictitious and should be replaced with your own. Refer screenshot above for details on where you can find this information.
+
 `ssh -i ~/Keys/MyEMRKey.pem hadoop@ec2-11-111-111-11.ap-south-1.compute.amazonaws.com 'sudo /home/hadoop/bootstrap_zeppelin.sh'`
+
+#### Windows Users
+Log into the master node with putty. [Read instructions to change the .pem file format to putty compatible format here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html). 
+
+After you have logged in, issue the above command like so,
+
+`sudo /home/hadoop/bootstrap_zeppelin.sh`
 
 ### Setting up the SSH tunnel from your machine/laptop to the Master Node in the EMR cluster
 To do this, if you have a Mac or Linux based laptop/machine, issue the following command,
 
 `ssh -f -N -i <full path to the .pem file you got when you generated your EC2 key pair> -L 127.0.0.1:8890:127.0.0.1:8890 hadoop@<Full DNS name of the EMR cluster master node>`
 
-for example,
+for example, note that all DNS names and key names are fictitious.
 
 `ssh -f -N -i ~/Keys/MyEMRKey.pem -L 127.0.0.1:8890:127.0.0.1:8890 hadoop@ec2-11-111-111-11.ap-south-1.compute.amazonaws.com`
+
+#### Windows Users
+To set up an SSH tunnel from your Windows laptop/machine to the Master node in the EMR cluster, [follow these instructions](http://realprogrammers.com/how_to/set_up_an_ssh_tunnel_with_putty.html).
