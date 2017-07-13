@@ -36,6 +36,6 @@ Now, open the Cloudformation console in the AWS Management Console, and create t
 ...Log URI
 
 ## After the stack is created
-We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the cluster details thus,
+We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group.
 
-`aws emr describe-cluster --cluster-id j-xxxxxxxxxxx`
+
