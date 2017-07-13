@@ -54,7 +54,7 @@ Issue the following command from your laptop/machine, note that the key path and
 #### Windows Users
 Log into the master node with putty. [Read instructions to change the .pem file format to putty compatible format here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html). 
 
-After you have logged in, issue the above command like so,
+Use putty to login to the Master node, after you have logged in, in the putty terminal issue a command as follows,
 
 `sudo /home/hadoop/bootstrap_zeppelin.sh`
 
