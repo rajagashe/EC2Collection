@@ -47,6 +47,15 @@ __Location of the bootstrap actions script__ : This is the same as `s3://your-bu
 
 __Log URI__ : This is the location where EMR will store the logs, this is useful later for debugging issues you may face. This should be of the format like `s3://myBucket/EMRLogs`, as you can see, you may use prefixes anywhere and everywhere you see fit.
 
+The cloudformation template that we need to run is part of this Git repository, the filename is `launchclusterV2.template`. 
+
+1. Proceed to the __Cloudformation__ service from the AWS Management Console.
+2. Click __Create Stack__.
+3. On the next page, choose __Upload a template to Amazon S3__. Browse to select the dowloaded file.
+4. Provide a __Stack name__ and then provide all the required parameters the template requires to create the stack.
+5. Click __Next__ and then review.
+6. Click __Create__.
+
 ## After the stack is created
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
