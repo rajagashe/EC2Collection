@@ -33,7 +33,9 @@ __EC2 Keypair name__ : Read [here](http://docs.aws.amazon.com/AWSEC2/latest/User
 
 __Location of the bootstrap actions script__ : This is the same as `s3://your-bucket-name/bootstrap_EMRCluster.sh`. You will replace __your-bucket-name__ with the name of the S3 bucket you created above.
 
-__Subnet Id__ : This is the id of the subnet where you will launch the EMR cluster EC2 instances. This is of the format `subnet-XXXXXXX`.
+__Subnet Id__ : This is the id of the subnet where you will launch the EMR cluster EC2 instances. This is of the format `subnet-XXXXXXX`. Ensure that the subnet is a public subnet, to know how to recognise a public subnet [review this documentation](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario1.html).
+
+_A subnet that's associated with a route table that has a route to an Internet gateway is known as a public subnet._ 
 
 __Log URI__ : This is the location where EMR will store the logs, this is useful later for debugging issues you may face.
 
@@ -41,3 +43,16 @@ __Log URI__ : This is the location where EMR will store the logs, this is useful
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
 ![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ClusterDetails.png?raw=true)
+Click on the security group and add your custom IP address for SSH into the inbound list of allowed IP addresses and ports, for details have a look at [this](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html).
+
+### Setting the Apache Zeppelin interpreter
+`ssh -i ~/Keys/MyEMRKey.pem hadoop@ec2-11-111-111-11.ap-south-1.compute.amazonaws.com 'sudo /home/hadoop/bootstrap_zeppelin.sh'`
+
+### Setting up the SSH tunnel from your machine/laptop to the Master Node in the EMR cluster
+To do this, if you have a Mac or Linux based laptop/machine, issue the following command,
+
+`ssh -f -N -i <full path to the .pem file you got when you generated your EC2 key pair> -L 127.0.0.1:8890:127.0.0.1:8890 hadoop@<Full DNS name of the EMR cluster master node>`
+
+for example,
+
+`ssh -f -N -i ~/Keys/MyEMRKey.pem -L 127.0.0.1:8890:127.0.0.1:8890 hadoop@ec2-11-111-111-11.ap-south-1.compute.amazonaws.com`
