@@ -26,6 +26,18 @@ Change the following files to use the name of your new bucket instead of the str
 
 ## Getting the Data
 We will be using the [Movielens 100K dataset](https://grouplens.org/datasets/movielens/100k/) for this exercise. Download it, unzip the bundle, and upload all the files to the bucket you just created above.
+
+## Uploading the Data
+We should now upload all of the files we discussed so far, including the Movielens dataset to the newly created S3 bucket. You can either use the CLI to upload your files, like so,
+
+`aws s3 cp sourceFile s3://myBucket`
+
+To use the CLI to upload the files, we will need to ensure that we have our CLI configured, check [here for guidance on how to go about downloading and configuring the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html).
+
+__OR__, 
+
+We could use the AWS Management Console to upload all the files to our bucket, refer to this documentation for [guidance on using the AWS Management Console to upload your files](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/upload-objects.html).
+
 ## Run the Cloudformation template
 Now, open the Cloudformation console in the AWS Management Console, and create the stack, the template will ask for some parameters, make sure you already have them, they are,
 
@@ -33,11 +45,7 @@ __EC2 Keypair name__ : Read [here](http://docs.aws.amazon.com/AWSEC2/latest/User
 
 __Location of the bootstrap actions script__ : This is the same as `s3://your-bucket-name/bootstrap_EMRCluster.sh`. You will replace __your-bucket-name__ with the name of the S3 bucket you created above.
 
-__Subnet Id__ : This is the id of the subnet where you will launch the EMR cluster EC2 instances. This is of the format `subnet-XXXXXXX`. Ensure that the subnet is a public subnet, to know how to recognise a public subnet [review this documentation](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario1.html).
-
-_A subnet that's associated with a route table that has a route to an Internet gateway is known as a public subnet._ 
-
-__Log URI__ : This is the location where EMR will store the logs, this is useful later for debugging issues you may face.
+__Log URI__ : This is the location where EMR will store the logs, this is useful later for debugging issues you may face. This should be of the format like `s3://myBucket/EMRLogs`, as you can see, you may use prefixes anywhere and everywhere you see fit.
 
 ## After the stack is created
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
