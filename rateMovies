@@ -5,7 +5,7 @@ from os import remove, removedirs,system
 from os.path import dirname, join, isfile
 from time import time
 
-##destBkt = <Put your destination S3 location i.e. s3://bucket/prefix>
+destBkt = s3://myBucket/prefix
 
 topMovies = """1,Toy Story (1995)
 780,Independence Day (a.k.a. ID4) (1996)
