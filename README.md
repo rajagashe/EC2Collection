@@ -2,6 +2,8 @@
 This is the detailed description of the initial setup before attending the workshop on building a Recommendation Engine using Apache Spark running on [Amazon EMR](https://aws.amazon.com/emr/). The workshop uses Python 3, [Zeppelin](https://zeppelin.apache.org/) and the [Spark DataFrames API](https://spark.apache.org/docs/2.1.0/sql-programming-guide.html). Amazon EMR comes with python3 installed on all the cluster nodes, we use emr-5.5.0 release for this workshop, and we configure our EMR cluster to have Zeppelin & Spark installed at launch. Refer to the Cloudformation template for more details.
 
 ## Pull all the files in this Git repository.
+`bootstrap_EMRCluster.sh` - This file sets up the bootstrap_zeppelin.sh to use later.
+`bootstrap_zeppelin.sh` - A misnomer actually, this file changes the interpreter we will use by default in the interpreter.json file
 ## Creating a bucket
 With a name of your choice in the region of your choice. Note, this will decide in which region your EMR cluster will be launched, it will be the same as the region where the bucket is created. You can [create an Amazon S3 bucket using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) or using the CLI, here is an example of creating the bucket using AWS CLI.
 
