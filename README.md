@@ -29,13 +29,13 @@ We will be using the [Movielens 100K dataset](https://grouplens.org/datasets/mov
 ## Run the Cloudformation template
 Now, open the Cloudformation console in the AWS Management Console, and create the stack, the template will ask for some parameters, make sure you already have them, they are,
 
-...An EC2 Keypair name
+__EC2 Keypair name__ : Read [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) how to create an EC2 key pair. This will be used to set up SSH between your laptop/desktop to the Master node.
 
-...Location of the bootstrap actions script
+__Location of the bootstrap actions script__ : This is the same as `s3://your-bucket-name/bootstrap_EMRCluster.sh`. You will replace __your-bucket-name__ with the name of the S3 bucket you created above.
 
-...A subnet Id
+__Subnet Id__ : This is the id of the subnet where you will launch the EMR cluster EC2 instances. This is of the format `subnet-XXXXXXX`.
 
-...Log URI
+__Log URI__ : This is the location where EMR will store the logs, this is useful later for debugging issues you may face.
 
 ## After the stack is created
 We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group.
