@@ -72,7 +72,7 @@ iam:AttachRolePolicy
 
 iam:PassRole
 
-__USING THE AWS Management Console__
+__Creation of default roles USING THE AWS Management Console__
 
 These IAM roles are expected by the cloudformation template we will use below to spin up our cluster. If you ever launched an Amazon EMR cluster before and used __default roles__ for the cluster, you will have them, the default roles go by the name `EMR_EC2_DefaultRole` and `EMR_DefaultRole`. If you have never launched an EMR cluster in your AWS account, follow the instructions below to ensure that you have created these roles before we use the cloudformation template below,
 
@@ -89,7 +89,7 @@ These IAM roles are expected by the cloudformation template we will use below to
 
 5. Follow the steps 2 through 4 for the other role, for the role type, choose __Amazon Elastic MapReduce for EC2__ (ref. screen shot in point 2 above). Same as in point 3 above, you will be presented with a single policy, select the policy, same as you did in point 3 above, and finally, name the role __EMR_EC2_DefaultRole__ and click __Create role__.
 
-__USING THE AWS CLI__
+__Creation of default roles USING THE AWS CLI__
 
 If you have all your access key and scret keys in plaace and configured AWS CLI on your laptop/machine/desktop, all you have to do to create these roles is issue the following command:
 
