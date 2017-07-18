@@ -48,9 +48,9 @@ We could use the AWS Management Console to upload all the files to our bucket, r
 
 *_All the files from the Movielens Dataset._
 
-### At this point, you should have the following IAM Roles in place, 
+### At this point, you should have the default IAM Roles in place, 
 
-If you are using an IAM Role to create these default roles for an Amazn EMR cluster you intend to launch, your IAM user will require the following permissions:
+If you are using an IAM User to create these default roles for an Amazn EMR cluster you intend to launch, your IAM user will require the following permissions:
 
 iam:CreateRole
 
