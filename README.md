@@ -3,8 +3,15 @@ This is the detailed description of the initial setup before attending the works
 
 __NB: You may choose to finish all the steps listed here, except the launching of the cluster until much closer to the time you will be attending the workshop, that way you will not incur unnecessary charges for resources used.__
 
-## Pull all the files in this Git repository.
-Do not change the names of the files that we will soon be uploading to S3. The Cloudformation template we use will be expecting these exact names.
+## Clone this Git repository.
+
+To clone this repository, issue the following command on your command prompt,
+
+`git clone http://github.com/OmarKhayyam/EC2Collection ./my_local_directory`
+
+else, you can use the __Clone or download__ to get the contents of this repository.
+
+Do not change the names of the files, we will soon be uploading them to S3. The Cloudformation template we use will be expecting these exact filenames.
 
 `bootstrap_EMRCluster.sh` - This file sets up the bootstrap_zeppelin.sh to use later.
 
