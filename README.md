@@ -48,7 +48,52 @@ We could use the AWS Management Console to upload all the files to our bucket, r
 
 *_All the files from the Movielens Dataset._
 
+### At this point, you should have the following IAM Roles in place, 
 
+If you are using an IAM Role to create these default roles for an Amazn EMR cluster you intend to launch, your IAM user will require the following permissions:
+
+iam:CreateRole
+
+iam:PutRolePolicy
+
+iam:CreateInstanceProfile
+
+iam:AddRoleToInstanceProfile
+
+iam:ListRoles
+
+iam:GetPolicy
+
+iam:GetInstanceProfile
+
+iam:GetPolicyVersion
+
+iam:AttachRolePolicy
+
+iam:PassRole
+
+__USING THE AWS Management Console__
+
+These IAM roles are expected by the cloudformation template we will use below to spin up our cluster. If you ever launched an Amazon EMR cluster before and used __default roles__ for the cluster, you will have them, the default roles go by the name `EMR_EC2_DefaultRole` and `EMR_DefaultRole`. If you have never launched an EMR cluster in your AWS account, follow the instructions below to ensure that you have created these roles before we use the cloudformation template below,
+
+1. Login to your AWS account and navigate to your IAM Management Console, this is what it will look like,
+![](https://github.com/OmarKhayyam/EC2Collection/blob/master/IAMManagementConsole.png?raw=true)
+
+2. Click __Roles__ (highlighted by the rectangle in the screen shot above), this will take you to the __Roles__ screen, click on __Create new role__ at the top, you will be taken to a screen (see below), where you need to choose __AWS Service Role__  as highlighted and choose the role type, in our case, first select the role type named __Amazon Elastic MapReduce__ (we will talk about the other role type shortly).
+![](https://github.com/OmarKhayyam/EC2Collection/blob/master/ChooseServiceRole.png?raw=true)
+
+3. This will take you to the Attach Policy screen, refer below screen shot, choose the policy and click __Next step__.
+![](https://github.com/OmarKhayyam/EC2Collection/blob/master/AttachPolicy.png?raw=true)
+
+4. In the next screen, give this role the name __EMR_DefaultRole__ and click the __Create role__ button at the bottom of your screen.
+
+5. Follow the steps 2 through 4 for the other role, for the role type, choose __Amazon Elastic MapReduce for EC2__ (ref. screen shot in point 2 above). Same as in point 3 above, you will be presented with a single policy, select the policy, same as you did in point 3 above, and finally, name the role __EMR_EC2_DefaultRole__ and click __Create role__.
+
+__USING THE AWS CLI__
+
+If you have all your access key and scret keys in plaace and configured AWS CLI on your laptop/machine/desktop, all you have to do to create these roles is issue the following command:
+
+`aws emr create-default-roles`
 
 ## Run the Cloudformation template
 Now, open the Cloudformation console in the AWS Management Console, and create the stack, the template will ask for some parameters, make sure you already have them, they are,
