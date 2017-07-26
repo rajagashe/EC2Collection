@@ -123,7 +123,7 @@ The cloudformation template that we need to run is part of this Git repository, 
 6. Click __Create__.
 
 ## After the stack is created
-We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
+You can find the Master Node's FQDN in the Outputs tab of your Cloudformation console. You can also find your EMR cluster in the Amazon EMR console. We will need to modify the Security group of the master node in the EMR cluster. You can find the Master node's security group by looking at the Cluster details and identifying the master node's security group. Like so,
 
 ![](https://github.com/OmarKhayyam/EC2Collection/blob/master/SGandFQDN.png?raw=true)
 
