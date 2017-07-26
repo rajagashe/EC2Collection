@@ -116,5 +116,12 @@
 		"VisibleToAllUsers": true
 	}
      }
+  },
+  "Outputs": {
+  	"MasterInstanceFQDN": {
+                        "Description": "The Fully Qualified DNS name of the Master Node of your Amazon EMR cluster.",
+                        "Value": { "Fn::GetAtt" : [ "RecoCluster" , "MasterPublicDNS" ]}
+        }
   }
+
 }
