@@ -169,4 +169,4 @@ This should display a page similar to this,
 ![](https://github.com/OmarKhayyam/EC2Collection/blob/master/Zeppelin-First-Screen.png?raw=true)
 
 ### After setting up Zeppelin
-Use the __Import note__ link to upload and start using the Zeppelin notebook that came as part of the git repository you downloaded.
+Use the __Import note__ link to upload and start using the Zeppelin notebook that came as part of the git repository you downloaded. You will have to change specifics, like the Amazon S3 bucket to use in your case.
