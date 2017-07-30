@@ -167,3 +167,6 @@ All you have to do is open your favourite browser and enter the following in it 
 This should display a page similar to this,
 
 ![](https://github.com/OmarKhayyam/EC2Collection/blob/master/Zeppelin-First-Screen.png?raw=true)
+
+### After setting up Zeppelin
+Use the __Import note__ link to upload and start using the Zeppelin notebook that came as part of the git repository you downloaded.
