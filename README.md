@@ -35,8 +35,11 @@ Change the following files to use the name of your new bucket instead of the str
 
 ## Getting the Data
 We will be using the that was previously published on the Movielens site, this site : [Movielens 100K dataset](https://grouplens.org/datasets/movielens/100k/) now has new data. For this exercise, download the following files:
+
 https://s3.ap-south-1.amazonaws.com/rnsdemowritable/movies.csv
+
 https://s3.ap-south-1.amazonaws.com/rnsdemowritable/ratings.csv
+
 Upload the files to the bucket you just created above.
 
 ## Uploading the files
