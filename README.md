@@ -34,7 +34,10 @@ Change the following files to use the name of your new bucket instead of the str
 `rateMovies` - Replace __myBucket__ with the name of the bucket you just created above. If you are going to modify the `personalRatings.txt` file by hand, you don't need to do modify this file.
 
 ## Getting the Data
-We will be using the [Movielens 100K dataset](https://grouplens.org/datasets/movielens/100k/) for this exercise. Download it, unzip the bundle, and upload all the files to the bucket you just created above.
+We will be using the that was previously published on the Movielens site, this site : [Movielens 100K dataset](https://grouplens.org/datasets/movielens/100k/) now has new data. For this exercise, download the following files:
+https://s3.ap-south-1.amazonaws.com/rnsdemowritable/movies.csv
+https://s3.ap-south-1.amazonaws.com/rnsdemowritable/ratings.csv
+Upload the files to the bucket you just created above.
 
 ## Uploading the files
 We should now upload all of the files we discussed so far, including the Movielens dataset to the newly created S3 bucket. You can either use the CLI to upload your files, like so,
